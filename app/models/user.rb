@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :applies, dependent: :destroy
   has_many :watchlists, dependent: :destroy
-  has_many :posts
+  has_many :posts, foreign_key: :publisher_id
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

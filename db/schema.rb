@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620012318) do
+ActiveRecord::Schema.define(version: 20170205070239) do
 
   create_table "applies", force: :cascade do |t|
     t.text     "resume"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160620012318) do
     t.text     "education"
     t.text     "experience"
     t.text     "skills"
+    t.integer  "post_id"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -70,6 +71,18 @@ ActiveRecord::Schema.define(version: 20160620012318) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "company_id"
+    t.integer  "publisher_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "posts", ["company_id"], name: "index_posts_on_company_id"
+  add_index "posts", ["publisher_id"], name: "index_posts_on_publisher_id"
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "job_id"
