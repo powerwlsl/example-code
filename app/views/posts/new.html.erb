@@ -1,0 +1,59 @@
+<style>
+div.field{
+  align-items: center;
+}
+div.field input, textarea{
+  width: 100%;
+  max-width: 400px;
+  border-style: double;
+  padding: 10px;
+  border-radius: 10px;
+}
+div.field textarea{
+  min-height: 200px;
+}
+
+div.input-form{
+  max-width: 450px;
+  padding: 25px;
+  margin: 0 auto;
+}
+h1{
+  text-align: center;
+}
+
+</style>
+
+<div class="small-center">
+<h1>Post A Job</h1>
+<h3>Recruit Top Talent</h3>
+ 
+<div class="input-form">
+<%= form_for(@post) do |f| %>
+	<ul>
+		<!-- error handling -->
+		<% @post.errors.full_messages.each do |error| %> 
+		<li><%= error %></li>
+		<% end %>
+	</ul>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true %>
+  </div>
+  <br>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, autofocus: true %>
+  </div>
+  <br>
+
+  <div class="actions">
+    <input class="btn btn-primary" type="submit" value="Post" name="commit"></input>
+  </div>
+<% end %>
+
+<br>
+</div> <!-- form -->
+</div>
