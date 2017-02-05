@@ -1,0 +1,15 @@
+<%if @post.description != nil and @post.description != "" %>
+<div class="panel panel-default">
+	<div class="panel-heading"><h3>Post Description</h3></div>
+	<div class ="panel-body"><%= @post.description.html_safe %></div>
+</div>
+<%end%>
+
+<%if @post.qualification != nil and @post.qualification != "" %>
+<div class="panel panel-default">
+	<div class="panel-heading">
+	<h3>Key Requirements</h3>
+	</div>
+	<div class="panel-body"><%= @post.qualification.html_safe %></div>
+</div>
+<%end%>

@@ -1,0 +1,17 @@
+<div class="jumbotron">
+<h1><%= @post.title %></h1>
+<p>
+<% if(@post.company_id != nil)%>
+	<p><span class="glyphicon glyphicon-globe"></span>
+	<% @c_name = Company.find(@post.company_id).name%>
+ 	<a href="<%=company_path(@post.company_id)%>"><%=@c_name%></a> </p>
+<% end %>
+<% if(@post.location != nil)%>
+	<p><span class="glyphicon glyphicon-map-marker"></span> <%= @post.location %></p>
+<% end %>
+</p>
+<p><span class="glyphicon glyphicon-time"></span>
+<%= @post.created_at.strftime("%Y-%m-%d, %T") %></p>
+
+<%= render :partial => "/posts/apply_buttons" %>
+</div>
