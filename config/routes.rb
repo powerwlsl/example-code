@@ -2,10 +2,12 @@ Rails.application.routes.draw do
   # uses custom controller for registrations
   devise_for :users, :controllers => {registrations: 'registrations'}
   root 'welcome#index'
-  resources :companies
+  resources :companies 
   resources :jobs
   resources :applies
   resources :tags
+  resources :posts
+
   # resources :users, only: [:edit_password]
 
   # Other non-resourceful routes
