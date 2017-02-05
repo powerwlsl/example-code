@@ -1,9 +1,9 @@
 class SearchController < ApplicationController
 	def search
 	  if params[:q].nil?
-	    @jobs = []
+	    @posts = []
 	  else
-	    @jobs = Job.search params[:q]
+	    @posts = Post.search(params[:q])
 	  end
 	end
 end

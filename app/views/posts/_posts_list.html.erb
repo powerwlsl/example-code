@@ -9,7 +9,7 @@
       <h1>Available Jobs</h1>
       <h3>
         <% @posts.each do |post| %>
-          <p><%= post.title %></p>
+          <p><%= link_to post.title, post_path(post) %></p>
         <% end %>
       </h3>
     <% end %>
