@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170205070239) do
+ActiveRecord::Schema.define(version: 20170205091652) do
 
   create_table "applies", force: :cascade do |t|
     t.text     "resume"
@@ -77,8 +77,10 @@ ActiveRecord::Schema.define(version: 20170205070239) do
     t.text     "description"
     t.integer  "company_id"
     t.integer  "publisher_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "location"
+    t.text     "qualification"
   end
 
   add_index "posts", ["company_id"], name: "index_posts_on_company_id"
