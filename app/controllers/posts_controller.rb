@@ -48,6 +48,15 @@ class PostsController < ApplicationController
   #   end
   # end
 
+  def create
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to @post
+    else
+      render 'new'
+    end
+  end
+
   # def category
   #   if params[:index]
   #     @index = params[:index].to_i
@@ -63,4 +72,8 @@ class PostsController < ApplicationController
   # def job_params
   #   params.require(:job).permit(:title, :description, :qualification, :company_id, :tag_list)
   # end
+  private
+    def post_params
+      params.require(:post).permit(:title, :description)
+    end
 end
