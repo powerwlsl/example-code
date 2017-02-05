@@ -29,7 +29,7 @@
                 <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg", style: "bottom: 15px;" %>
                 <a class="btn btn-primary btn-lg" style="bottom: 15px;" href="<%= new_user_registration_path%>">Sign Up</a>
                 <% end %>
-                <a id="orange" href="<%= new_post_path %>">Post A Job</a>
+                <a class="btn btn-primary btn-lg" style="bottom: 15px;background-color:#3f81c7; border-color:#3f81c7" href="<%=  new_post_path %>">Post A Job</a>
 
                 <a id="orange" href="<%=companies_path()%>">Companies</a>
                 <a id="orange" href="<%=jobs_path%>">Find A Job</a>
