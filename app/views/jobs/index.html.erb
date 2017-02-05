@@ -1,0 +1,17 @@
+
+<div class="container">
+	<h1 class="text-center">Start Searching for Jobs by Title or Location</h1> 
+	<br>
+	<form method="get" accept-charset="UTF-8" action="/jobs">
+	<div class="input-group input-group-lg">
+		<input id="q" name="q" type="text" class="form-control" placeholder="Search job...">
+		<span class="input-group-btn">
+			<input class="btn btn-primary" type="submit" value="Find Job"><span class="glyphicon glyphicon-search"></span></input>
+		</span>
+	</div><!-- /input-group -->
+	</form>
+	<br>
+	<hr>
+	<%=render :partial => "jobs_list"%>
+
+</div>

@@ -1,0 +1,13 @@
+<% if @job.created_at < 3.months.ago %>
+  <a href="#" class="btn btn-danger btn-lg btn-block">EXPIRED</a>
+<% elsif current_user %>
+
+  <a href="<%=@job.source%>" class="btn btn-primary btn-lg btn-block">Apply
+  </a>
+
+<% else %>
+  <% session[:job_redirect] = @job.id %>
+  <a href="<%=new_user_registration_path%>" class="btn btn-primary btn-lg btn-block">Apply
+  </a>
+<!-- TODO, redirect back to this page after resume upload -->
+<% end %>

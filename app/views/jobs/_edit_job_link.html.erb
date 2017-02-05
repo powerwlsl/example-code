@@ -1,0 +1,11 @@
+<p><%= link_to "Edit this Job.", edit_job_path(@job) %> (should be visible only to owners of a position)</p>
+	<p><%= link_to "<<< List of jobs", jobs_path %></p>
+
+	<h3>Current Applicants</h3> (should be visible only to owners of a position)
+	<ul>
+		<% @job.applies.each do |apply| %>
+			<li>
+				<%= link_to apply.user.email, apply_path(apply.id) %>
+			</li>
+		<% end %>
+	</ul>

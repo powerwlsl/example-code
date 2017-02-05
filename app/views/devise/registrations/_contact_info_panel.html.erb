@@ -1,0 +1,51 @@
+    <!-- EDIT CONTACT INFO -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+    <h3>Edit Contact Information</h3>
+    </div>
+    <div class="panel-body">
+    <p>This information will help employers contact you.</p>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |g| %>
+    <%= devise_error_messages! %>
+    
+    <div class="field">
+      <%= g.label :first_name %><br />
+      <%= g.text_field :first_name, autofocus: true %>
+    </div>
+    
+    <div class="field">
+      <%= g.label :last_name %><br />
+      <%= g.text_field :last_name %>
+    </div>
+    
+    <div class="field">
+      <%= g.label :phone_number %><br />
+      <%= g.telephone_field :phone_number %>
+    </div>
+    
+    <div class="field">
+      <%= g.label :mobile_number %><br />
+      <%= g.telephone_field :mobile_number %>
+    </div>
+    
+    <div class="field">
+      <%= g.label :city %><br />
+      <%= g.text_field :city %>
+    </div>
+    
+    <div class="field">
+      <%= g.label :country %><br />
+      <%= g.text_field :country %>
+    </div>
+    
+    <div class="field">
+      <%= g.label :postal_code %><br />
+      <%= g.text_field :postal_code %>
+    </div><br>
+
+    <div class="actions">
+      <%= g.submit "Update" %>
+    </div>
+
+    </div><!-- panel-body -->
+    </div> <!-- panel -->

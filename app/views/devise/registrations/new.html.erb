@@ -1,0 +1,57 @@
+<style>
+div.field{
+  align-items: center;
+}
+div.field input, textarea{
+  width: 100%;
+  max-width: 400px;
+  border-style: double;
+  padding: 10px;
+  border-radius: 10px;
+}
+div.field textarea{
+  min-height: 200px;
+}
+
+div.input-form{
+  max-width: 450px;
+  padding: 25px;
+  margin: 0 auto;
+}
+h1{
+  text-align: center;
+}
+
+</style>
+
+<div class="small-center">
+<h1>Join PetroRecruit FREE!</h1>
+<h3>Get access to the the largest collection of oil and gas jobs.</h3>
+<div class="input-form">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+  <br>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+  <br>
+
+  <div class="actions">
+    <input class="btn btn-primary" type="submit" value="Sign up" name="commit"></input>
+  </div>
+<% end %>
+
+<br>
+<%= render "devise/shared/links" %>
+</div> <!-- form -->
+</div>

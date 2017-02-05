@@ -1,0 +1,17 @@
+
+.row
+  .col-lg-2
+
+  .col-lg-8
+    
+    - if @jobs.empty?
+      h1 No Search Results!
+    - else 
+      h1 Available Jobs 
+      h3
+        = "Search: #{params[:q]}" if !params[:q].nil? && params[:q]!=""
+      = will_paginate @jobs, renderer: BootstrapPagination::Rails
+      ul#jobs
+        = render @jobs
+      = will_paginate @jobs, renderer: BootstrapPagination::Rails
+  .col-lg-2

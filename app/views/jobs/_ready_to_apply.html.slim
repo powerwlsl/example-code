@@ -1,0 +1,10 @@
+h4
+  ="Ready to apply "
+  span.label.label-info FREE
+p.subtext Oil&Gas Job Hunting is now seamless.
+p.subtext All on one site.
+p.subtext Receive free job notification by signing up.
+- if signed_in?
+  = link_to "Edit My Profile", edit_user_registration_path, class: 'btn btn-success wide'
+- else
+  = link_to "Create My Profile", new_user_registration_path, class: 'btn btn-success wide'

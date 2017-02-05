@@ -1,0 +1,42 @@
+<br>
+<div class="container">
+<div class="row">
+  <div class="col-lg-2">
+  </div>
+  <div class="col-lg-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1>Upload your Resume</h1>
+      </div>
+      <div class="panel-body">
+        <h3>We use advanced analytics to match you with the most suitable job.</h3>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |g| %>
+        <%= devise_error_messages! %>
+          <% if current_user.resume.url == "/resumes/original/missing.png" %>
+            <span class="help-block">Upload your resume/CV.</span>
+          <% else%>
+            <p>
+               Current Resume:
+               <%= link_to current_user.resume_file_name, current_user.resume.url(:original, false) %>
+            </p>
+          <% end %>
+          <%= g.file_field :resume %>
+        <br>
+        <%= g.submit "Update", class: 'btn btn-primary' %>
+        <% end %> <!-- end of form -->
+
+        <% if current_user.resume.url == "/resumes/original/missing.png" %>
+          <% if session[:job_redirect].is_a? Integer %>
+            <!-- :job_redirect is set when you hit apply to a job, not signed in -->
+            <%= link_to "Skip for now", job_path(session[:job_redirect]) %>
+          <%else%>
+            <%= link_to "Skip for now", root_path %>
+          <%end%>
+        <%end%>
+      </div>
+    </div> <!-- end of panel -->
+  </div>
+  <div class="col-lg-2">
+  </div>
+</div>
+</div>

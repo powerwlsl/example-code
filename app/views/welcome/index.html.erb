@@ -1,0 +1,94 @@
+<meta name="google-site-verification" content="Sr0A1jWscDJWlBcrRjWRLuaHGy5BdGaQVsBEoT0dIks" />
+
+<script>
+$(document).ready(function(){
+
+ $("#menu").click(function(){
+   if($(window).width() < 875){
+     $("#navbtns").toggle()
+   }
+ });
+
+
+ $(window).resize(function() {onResize();});
+ setTimeout( function() { onResize(); },25);
+});
+
+function onResize() {
+ if($(window).width() >= 875){
+     $("#navbtns").css("display", "");
+ }
+}
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-77125901-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<style>
+
+
+#main{
+ width:100%;
+ height:500px;
+ background:url(<%=asset_path('bkg_home.jpg')%>);
+ background-position:center;
+ background-size:cover;
+ color:white;
+ text-align:right;
+ overflow:hidden;
+ margin-top:102px;
+ }
+
+#looking{
+ width:100%;
+ height:400px;
+ background:url(<%=asset_path('factory.jpg')%>);
+ text-align:center;
+ color:white;
+ overflow:auto;
+ clear:both;
+ }
+
+</style>
+
+    <div id="main">
+        <div class="wrapper">
+            <h3>Connecting talent around the world.</h3>
+            <p>PetroRecruit is the Simplest Online Recruiting Platform for Oil & Gas Workers.</p>
+            <%= link_to "Find a Job", jobs_path, class: "btn btn-lg btn-primary", id: "paul-second-time"%>
+        </div>
+    </div>
+    <div id="howitworks">
+        <div class="wrapper">
+            <h3>How It Works</h3>
+            <div class="module">
+                <%= image_tag "logo.jpg"%>
+                <h5 class="title">Submit Your Info</h5>
+                <p class="content">You don't have to fill out multiple applications, we do that for you. Decrease time spent on filling applications, increase time-to-market and be part of a curated list of oil and gas talent.</p>
+            </div>
+            <div class="module">
+                <%= image_tag "step2.png"%>
+                <h5 class="title">We Match You</h5>
+                <p class="content">We create a super-efficient way for talent in the oil and gas industry to get exposed to new opportunities with great companies.</p>
+            </div>
+            <div class="module">
+                <%= image_tag "step3.png"%>
+                <h5 class="title">Get A Job</h5>
+                <p class="content">Join the company that's right for you. There are pending jobs ranging from $75,000 to $250,000 from Precision Drilling in Canada to Schlumberger all over the world.</p>
+            </div>
+        	        	<%= link_to "Get Started Now", new_user_registration_path, class: "btn btn-lg btn-primary btn-block", id: "startbtn"%>
+        </div>
+    </div>
+    <div id="looking">
+        <div class="buffer">
+            <h3>Looking to Hire?</h3>
+            <p>Are you looking to HIRE talented individuals in oil and gas?</p>
+               <a href="recruiter" class="btn btn-lg btn-primary outline">Start Posting Jobs Now</a>
+        </div>
+    </div>

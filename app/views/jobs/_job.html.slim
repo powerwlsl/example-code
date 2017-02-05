@@ -1,0 +1,22 @@
+li.job
+  .media
+    .media-left
+      - if job.company.present?
+        a href="#{job_path(job)}"
+          = image_tag job.company.logo.url(:thumb), class: "company-thumbnail"
+    .media-body
+      h4.media-heading
+        = link_to job.title, job_path(job)
+      - if job.company.present?
+        => link_to job.company.name, company_path(job.company_id)
+      - else
+        | (no associated company)
+      - if job.location != nil
+        = "| "
+        span.location= job.location
+      .timestamp
+        = "Posted #{time_ago_in_words(job.created_at)} ago "
+        - if(job.created_at <= 1.months.ago)
+          span.label.label-danger OLD
+        - elsif(job.created_at > 3.days.ago)
+          span.label.label-success NEW

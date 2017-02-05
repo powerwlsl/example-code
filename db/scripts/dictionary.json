@@ -1,0 +1,101 @@
+{
+   "Engineering":"Engineering & Sciences",
+   "Civil Engineering":"Engineering & Sciences",
+   "Oil & Energy":"REMOVE",
+   "Design":"Engineering & Sciences",
+   "Finance":"Finance & Accounting",
+   "Research":"Engineering & Sciences",
+   "Financial Services":"Finance & Accounting",
+   "Investment Banking":"Finance & Accounting",
+   "Legal":"HR/Business/IT/Legal",
+   "Administrative":"HR/Business/IT/Legal",
+   "General Business":"HR/Business/IT/Legal",
+   "Legal Services":"HR/Business/IT/Legal",
+   "Analyst":"HR/Business/IT/Legal",
+   "Writing/Editing":"HR/Business/IT/Legal",
+   "Information Technology and Services":"HR/Business/IT/Legal",
+   "Project Management":[
+      "Engineering & Sciences",
+      "HR/Business/IT/Legal"
+   ],
+   "Accounting/Auditing":"Finance & Accounting",
+   "Accounting":"Finance & Accounting",
+   "Mechanical or Industrial Engineering":"Engineering & Sciences",
+   "Mining & Metals":[
+      "Other",
+      "Engineering & Sciences"
+   ],
+   "Marketing":"HR/Business/IT/Legal",
+   "Business Development":"HR/Business/IT/Legal",
+   "Sales":"HR/Business/IT/Legal",
+   "Other":"Other",
+   "Construction":[
+      "Other",
+      "Engineering & Sciences"
+   ],
+   "Transportation/Trucking/Railroad":"Other",
+   "Electrical/Electronic Manufacturing":[
+      "Other",
+      "Engineering & Sciences"
+   ],
+   "Information Technology":"HR/Business/IT/Legal",
+   "Management":"HR/Business/IT/Legal",
+   "Customer Service":"HR/Business/IT/Legal",
+   "Staffing and Recruiting":"HR/Business/IT/Legal",
+   "Manufacturing":"Engineering & Sciences",
+   "Chemicals":"Engineering & Sciences",
+   "Utilities":"Engineering & Sciences",
+   "Environmental Services":"Engineering & Sciences",
+   "Computer Software":"HR/Business/IT/Legal",
+   "Quality Assurance":"Engineering & Sciences",
+   "Product Management":[
+      "HR/Business/IT/Legal",
+      "Other"
+   ],
+   "Consulting":"Other",
+   "Supply Chain":"HR/Business/IT/Legal",
+   "Strategy/Planning":"HR/Business/IT/Legal",
+   "Science":"Engineering & Sciences",
+   "Art/Creative":"Other",
+   "Renewables & Environment":"Engineering & Sciences",
+   "Human Resources":"HR/Business/IT/Legal",
+   "Training":[
+      "Other",
+      "HR/Business/IT/Legal"
+   ],
+   "Real Estate":"REMOVE",
+   "Distribution":[
+      "Other",
+      "HR/Business/IT/Legal"
+   ],
+   "Wholesale":[
+      "Other",
+      "HR/Business/IT/Legal"
+   ],
+   "Insurance":[
+      "Other",
+      "HR/Business/IT/Legal"
+   ],
+   "Automotive":"Other",
+   "Consumer Services":[
+      "Other",
+      "HR/Business/IT/Legal"
+   ],
+   "Machinery":"Other",
+   "Government Administration":[
+      "Other",
+      "HR/Business/IT/Legal"
+   ],
+   "Logistics and Supply Chain":[
+      "Other",
+      "HR/Business/IT/Legal"
+   ],
+   "Education":[
+      "Other",
+      "HR/Business/IT/Legal"
+   ],
+   "Purchasing":[
+      "Other",
+      "HR/Business/IT/Legal"
+   ]
+}

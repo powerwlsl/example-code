@@ -1,0 +1,23 @@
+br
+h1 Admin Panel
+p
+  = "Total User Count: #{@users_count}"
+h3
+  = "Resumes: #{@resume_count} (#{(1000*@resume_count/@users_count).to_f/10}% of users)"
+ul
+  - @users_with_resumes.each do |user|
+    li
+      a href="#{user.resume.url}"
+        = "#{user.email}: #{user.resume.url}"
+
+h3 All Emails
+ul
+  - @users.each do |user|
+    li
+      = user.email
+
+h3 Users without Resumes
+ul
+  - (@users-@users_with_resumes).each do |user|
+    li 
+      = user.email

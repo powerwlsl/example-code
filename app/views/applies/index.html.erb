@@ -1,0 +1,10 @@
+<h1>All Applications in Chronological Order</h1>
+<p>(This should be visible only to the admin)</p>
+<ul>
+	<% @applies.each do |apply| %>
+		<li>
+			<% str = apply.user.email  + " >>> " + apply.job.title %>
+			<%= link_to str, apply_path(apply)%>
+		</li>
+	<% end %>
+</ul>

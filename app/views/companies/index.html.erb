@@ -1,0 +1,15 @@
+<div class="container">
+<h1 style="text-align: center;">List of Companies</h1>
+<hr>
+<ul class="media-list">
+<% @companies.each do |company| %>
+	<%= render company %>
+	<% end %>
+	<%=will_paginate @companies, renderer: BootstrapPagination::Rails%>
+</ul>
+<% if current_user.present? %>
+<% if current_user.admin? %>
+<%= link_to "new company", new_company_path() %> (Placeholder for now, link accessible to admins only)
+<%end%>
+<%end%>
+</div>

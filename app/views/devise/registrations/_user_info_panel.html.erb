@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><p><h3><%=@user.first_name%> <%=@user.last_name%></h3></p>
+  </div>
+  <div class="panel-body">
+    <p><%=@user.city%>, <%=@user.country%></p>
+    <p><b>Email:</b></p>
+    <p><%=@user.email%></p>
+    <p><b>Phone Number:</b></p>
+    <p><%=@user.phone_number%></p>
+    <p><b>Postal Code:</b></p>
+    <p><%=@user.postal_code%></p>
+    
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">About Me</div>
+  <div class="panel-body">
+  <%=@user.synopsis%></div>
+</div>

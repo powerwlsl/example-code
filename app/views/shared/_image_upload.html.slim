@@ -1,0 +1,11 @@
+ul.nav.nav-pills
+  li.active
+    a data-toggle="tab" href="#upload-image" Upload
+  li
+    a data-toggle="tab" href="#remote-image" Remote URL
+br
+.tab-content
+  #upload-image.tab-pane.active
+    = f.file_field :logo
+  #remote-image.tab-pane
+    = f.text_field :logo_remote_url, class: 'form-control', placeholder: 'e.g. http://example.com/image.gif'

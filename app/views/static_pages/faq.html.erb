@@ -1,0 +1,9 @@
+[
+<% @jobs.each do |j| %>
+  {
+    "i": <%= j.id%>,
+    "t": "<%= j.title%>",
+    "d": "<%= j.description.to_s + " " + j.qualification.to_s%>"
+  }<%="," unless j == @jobs.last%>
+<%end%>
+]

@@ -1,0 +1,38 @@
+<br>
+
+<div class="container top">
+  <h1> Categorizer for Job ID: <%=@job.id%> and index: <%=@index%></h1>
+  <%= form_for @job do |f|%>
+  <%= f.select :tag_list, options_for_select(["Project Management",
+  "Construction",
+  "Drilling & Completions",
+  "Finance & Accounting",
+  "Health/Safety/Environment",
+  "IT/HR/Training/Analyst/Admin",
+  "Maintenance/Inspection/Commissioning",
+  "Management & Legal",
+  "Facilities/Midstream/Pipelines",
+  "Oilfield Services",
+  "Other Engineering & Science",
+  "Contracts/Procurement/Supply Chain & Logisitics",
+  "Production & Operations",
+  "Reservoir & Geoscience",
+  "Sales/Marketing/Business Development",
+  "Trades",
+  "Refining & Petrochemical",
+  "Offshore Specific",
+  "Other",
+  "Remove",
+  ""].sort)%>
+  <%= hidden_field_tag 'index', @index+1  %>
+  <%= f.submit "Submit", :class => "btn-lg btn-primary" %>
+  <%end%>
+
+  <br>
+  <h3>Current Category: <%= @job.tag_list == "" ? "(None)" : @job.tag_list %> </h3>
+  <a class="btn btn-primary" href="/category?index=<%= @index + 1 %>">KEEP CURRENT CATEGORY</a>
+  <br>
+  <br>
+<%= render :partial => '/jobs/jumbotron_info' %>
+<%= render :partial => '/jobs/job_info' %>
+</div>

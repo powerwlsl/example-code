@@ -1,0 +1,5 @@
+user_normal:
+  first_name: Kevin
+  last_name: Peng
+  email: niceguy@gmail.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>

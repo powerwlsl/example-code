@@ -1,0 +1,49 @@
+<!-- This is for user profile, linked to the devise model, rename to show.html.erb later -->
+<div class="row">
+	<div class = "col-sm-4">
+		<div class="panel panel-default">
+			<div class="panel-heading"><p><h3><%=@user.first_name%> <%=@user.last_name%></h3></p>
+			</div>
+			<div class="panel-body">
+				<p><%=@user.city%>, <%=@user.country%></p>
+				<p><b>Email:</b></p>
+				<p><%=@user.email%></p>
+				<p><b>Phone Number:</b></p>
+				<p><%=@user.phone_number%></p>
+				<p><b>Postal Code:</b></p>
+				<p><%=@user.postal_code%></p>
+				
+			</div>
+		</div>
+	</div>
+	<div class = "col-sm-8">
+		<div class="panel panel-default">
+			<div class="panel-heading">About Me</div>
+			<div class="panel-body">
+			<%=@user.synopsis%></div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Current Applications (<%= current_user.applies.size %>)
+			</div>
+			<div class="panel-body">
+			  <ul class="list-group">
+			    <% current_user.applies.each do |a| %>
+			    <li class="list-group-item">
+			      <%= link_to a.job.title, apply_path(a)%>
+			    </li>
+			    <% end %>
+			  </ul>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Watchlist
+			</div>
+			<div class="panel-body">
+			</div>
+		</div>
+		
+	</div>
+</div>
+

@@ -1,0 +1,19 @@
+ <h1>jobs Search</h1>
+
+<%= form_for search_path, method: :get do |f| %>
+  <p>
+    <%= f.label "Search for" %>
+    <%= text_field_tag :q, params[:q] %>
+    <%= submit_tag "Go", name: nil %>
+  </p>
+<% end %>
+
+<ul>
+  <% @jobs.each do |job| %>
+    <li>
+      <h3>
+        <%= link_to job.title, controller: "jobs", action: "show", id: job._id%>
+      </h3>
+    </li>
+  <% end %>
+</ul>

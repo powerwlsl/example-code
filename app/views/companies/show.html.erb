@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="jumbotron">
+	<div class="media">
+		<div class="media-left">
+			<%= image_tag @company.logo.url(:thumb), class: "jumbo-image"%>
+		</div>
+		<div class="media-body">
+			<h1 class="media-heading"><%= @company.name %></h1>
+		</div>
+	</div>
+
+<% if current_user.present? %>
+<% if current_user.admin? %>
+<p><%= link_to "Edit Profile.", edit_company_path(@company) %> (This link is only seen if admin or on an associated user account)</p>
+<p><%= link_to "Post Job.", new_job_path(@company) %></p>
+<%end%>
+<%end%>
+<p><%= @company.description.html_safe %></p>
+</div>
+<!-- Shows job postings for company if existing -->
+<% if (@company.jobs.length > 0) %>
+	<%= render :partial => "/jobs/jobs_list"%>
+<% else %>
+	<h3>No Job Postings for this company yet!</h3>
+<% end %>
+<br>
+</div>

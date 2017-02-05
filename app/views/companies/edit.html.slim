@@ -1,0 +1,16 @@
+.row
+  .col-lg-12: .block
+    h2 Edit #{@company.name}
+    = form_for @company, method: :put do |f|
+      - @company.errors.full_messages.each do |error|
+        li= error
+      .form-group
+        = f.label :name
+        = f.text_field :name, class: 'form-control'
+      .form-group
+        = f.label :description
+        = f.text_area :description, class: 'form-control'
+      .form-group
+        = f.label :image, "Image"
+        = render :partial => 'shared/image_upload', :locals => { :f => f }
+      => f.submit "Update", class: 'btn btn-primary'

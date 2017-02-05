@@ -1,0 +1,119 @@
+<h1 id="top">New Job Application</h1>
+<h3><%= @job.title %></h3>
+<hr>
+<%= form_for(@apply) do |g| %>
+<%= g.hidden_field :job_id, :value => @jobid %>
+<%= g.hidden_field :user_id, :value => current_user.id %>
+<ul>
+	<!-- error handling -->
+	<% @apply.errors.full_messages.each do |error| %>
+	<li><%= error %></li>
+	<% end %>
+</ul>
+
+
+<div class="input-form">
+
+	<% if @user.resume == nil %>
+		<p>
+			Add a resume in the <a href="<%=edit_user_registration_path%>">dashboard</a>.
+		</p>
+	<% else %>
+		<%= link_to current_user.resume_file_name, current_user.resume.url(:original, false), class: "btn btn-primary btn-lg" %>
+	<% end %>
+
+	<span class="help-block">This section is your contact information. Update it in the <a href="<%=edit_user_registration_path%>">dashboard</a> if you need to make changes.</span>
+
+	<div class="field">
+		<%= g.label :first_name %><br />
+		<input type="text" name="apply[first_name]" id="apply_first_name" value="<%=@user.first_name%>" readonly></input>
+	</div><br>
+
+	<div class="field">
+		<%= g.label :last_name %><br />
+		<input type="text" name="apply[last_name]" id="apply_last_name" value="<%=@user.last_name%>" readonly></input>
+	</div><br>
+
+<div class="field">
+		<%= g.label :phone_number %><br />
+		<input type="text" name="apply[phone_number]" id="apply_phone_number" value="<%=@user.phone_number%>" readonly></input>
+	</div><br>
+	<div class="field">
+		<%= g.label :mobile_number %><br />
+		<input type="text" name="apply[mobile_number]" id="apply_mobile_number" value="<%=@user.mobile_number%>" readonly></input>
+	</div><br>
+
+	<div class="field">
+		<%= g.label :city %><br />
+		<input type="text" name="apply[city]" id="apply_city" value="<%=@user.city%>" readonly></input>
+	</div><br>
+
+		<div class="field">
+		<%= g.label :country %><br />
+		<input type="text" name="apply[country]" id="apply_country" value="<%=@user.country%>" readonly></input>
+	</div><br>
+	<div class="field">
+		<%= g.label :postal_code %><br />
+		<input type="text" name="apply[postal_code]" id="apply_postal_code" value="<%=@user.postal_code%>" readonly></input>
+	</div>
+</div>
+
+
+
+
+<hr>
+		<div class="field">
+			<%= g.label :cover_letter %><br />
+			<div class="apply-form">
+	<span class="help-block">This is a simple, concise and formal letter that you send with your CV when applying for a job. It is vital in creating a good first impression and can be a key factor in getting you invited to a job interview.<br>
+	Its aim is to build on the information you provide in your resume, and it must make sufficient impact on the reader to make them want to know more about you. It is a socially acceptable way of introducing yourself and explaining which vacancy you're applying for or which area you are enquiring about.</span>
+			<textarea type="text" name="apply[cover_letter]" id="apply_cover_letter">Default value</textarea>
+		</div><br>
+
+		<div class="field">
+			<%= g.label :job_objective %><br />
+			<span class="help-block">The objective can show potential employers that you know what you want in a job and that you are familiar with the industry or field. Resume objectives can be general or specific in nature.</span>
+			<%= g.text_area :job_objective %>
+		</div><br>
+
+
+		<div class="field">
+			<%= g.label :synopsis %><br />
+			<span class="help-block">Write a short synopsis about what type of person you are and what your strengths are.</span>
+			<div class="apply-form">
+	<textarea name="apply[synopsis]" id="apply_synopsis"><%=@user.synopsis%></textarea>
+		</div><br>
+
+		<div class="field">
+			<%= g.label :education %><br />
+			<span class="help-block">Where did you recieve education? List you degree and any certifications that you may have.</span>
+			<div class="apply-form">
+	<textarea name="apply[education]" id="apply_education"><%=@user.education%></textarea>
+		</div><br>
+
+
+		<div class="field">
+			<%= g.label :experience %><br />
+			<span class="help-block">What previous job, internship or volunteer experience do you have?</span>
+			<div class="apply-form">
+	<textarea name="apply[experience]" id="apply_experience"><%=@user.experience%></textarea>
+		</div><br>
+
+
+		<div class="field">
+			<%= g.label :skills %><br />
+			<span class="help-block">What technical skills do you have? What areas do you specialize in?</span>
+			<div class="apply-form">
+	<textarea name="apply[skills]" id="apply_skills"><%=@user.skills%></textarea>
+		</div><br>
+		<input class="btn btn-primary btn-lg" name="commit" value="Submit Application" type="submit"></input>
+</div> <!-- form -->
+<br>
+<hr>
+<br>
+<%= render :partial => "/jobs/jumbotron_info"%>
+
+<%= render :partial => "/jobs/job_info"%>
+
+
+<% end %>

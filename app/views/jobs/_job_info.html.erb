@@ -1,0 +1,15 @@
+<%if @job.description != nil and @job.description != "" %>
+<div class="panel panel-default">
+	<div class="panel-heading"><h3>Job Description</h3></div>
+	<div class ="panel-body"><%= @job.description.html_safe %></div>
+</div>
+<%end%>
+
+<%if @job.qualification != nil and @job.qualification != "" %>
+<div class="panel panel-default">
+	<div class="panel-heading">
+	<h3>Key Requirements</h3>
+	</div>
+	<div class="panel-body"><%= @job.qualification.html_safe %></div>
+</div>
+<%end%>

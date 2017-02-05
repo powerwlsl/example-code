@@ -1,0 +1,13 @@
+li.job
+  .media
+    .media-left
+      = image_tag company.logo.url(:thumb), class: "company-thumbnail"
+    .media-body
+      h4.media-heading
+        = link_to company.name, company_path(company)
+      p
+        - if company.description.length > 200
+          = company.description[0...199].html_safe
+          |...
+        - else
+          = company.description.html_safe
