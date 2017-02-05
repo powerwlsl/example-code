@@ -12,6 +12,31 @@ class PostsController < ApplicationController
   #   end
   # end
 
+  # def index
+    # @jobs = []
+    # @paginate = false
+    # if params[:q].nil? || params[:q] == ""
+    #   @jobs = Job.order("created_at DESC").paginate :page => params[:page]
+    #   @paginate = true
+    # else
+    #   @jobs = Job.search(params[:q]).page(params[:page]).records
+    #   @paginate = false
+    # end
+  # end
+
+  def index
+    @posts = []
+    @posts = Post.all
+    # @paginate = false
+    # if params[:q].nil? || parmas[:q] == ""
+    #   @posts = Post.order("created_at DESC").paginate :page => params[:page]
+    #   @paginate = true
+    # else
+    #   @posts = Post.search(params[:q]).page(params[:page]).records
+    #   @paginate = false
+    # end
+  end
+
   def show
     @post = Post.find(params[:id])
   end
