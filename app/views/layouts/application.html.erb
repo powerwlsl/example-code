@@ -29,8 +29,11 @@
                 <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg", style: "bottom: 15px;" %>
                 <a class="btn btn-primary btn-lg" style="bottom: 15px;" href="<%= new_user_registration_path%>">Sign Up</a>
                 <% end %>
+                <a id="orange" href="/">Post a job</a>
+
                 <a id="orange" href="<%=companies_path()%>">Companies</a>
                 <a id="orange" href="<%=jobs_path%>">Find A Job</a>
+
             </div>
         </div>
     </nav>

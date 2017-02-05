@@ -1,5 +1,6 @@
 class Company < ActiveRecord::Base
 	has_many :jobs, dependent: :destroy
+  has_many :posts, dependent: :destroy
 	#checks if company name exists
 	validates :name, uniqueness: true, presence: true
 	before_create do
